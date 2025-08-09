@@ -44,7 +44,7 @@ services:
       dockerfile: Dockerfile
     container_name: restaurant-backend
     environment:
-      - DATABASE_URL=postgresql://postgres:postgres123@postgres:5432/restaurant_ordering
+      - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/restaurant_ordering
       - REDIS_URL=redis://redis:6379
       - SECRET_KEY=your-super-secret-key-change-in-production
       - ENVIRONMENT=development
@@ -85,4 +85,3 @@ volumes:
 networks:
   default:
     name: restaurant-network
-
